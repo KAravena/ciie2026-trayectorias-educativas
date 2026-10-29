@@ -1,0 +1,61 @@
+/* CIIE 2026 · Reglas exclusivas del runtime NATIVO Quarto / Reveal.js.
+ * No alterar .reveal .slides, ni la visibilidad/posición de secciones:
+ * Reveal.js controla su maquetación, escala y transiciones. */
+:root { --royal:#422168; --violet:#7953A6; --lavender:#E9E2F2; --ink:#342D40; }
+.reveal { background:#e9e6ed; }
+.reveal .slides { text-align:left; }
+.reveal .slides section.academic-slide {
+  width:1280px !important; height:720px !important;
+  margin:0 !important; padding:0 !important; border:0 !important;
+  box-sizing:border-box !important; background:#fff !important;
+  overflow:hidden !important;
+}
+.reveal .slides section.academic-slide > h2 { display:none !important; }
+.reveal .slides section.academic-slide .slide-canvas {
+  position:relative !important; width:1280px !important; height:720px !important;
+  margin:0 !important; padding:0 !important; overflow:hidden !important;
+  box-sizing:border-box; background:#fff;
+}
+.reveal .ppt-text,.reveal .ppt-rect { position:absolute; white-space:normal; z-index:3; }
+.reveal .ppt-text { line-height:1.08; margin:0; overflow:visible; }
+.reveal .ppt-text .ppt-para { min-height:1px; white-space:normal; margin:0; padding:0; }
+.reveal .ppt-text .ppt-para span { display:inline; }
+.reveal .ppt-rect { z-index:1; }
+.reveal .raw-line {
+  position:absolute; top:0; left:0; width:1280px; height:720px;
+  z-index:2; overflow:visible; pointer-events:none;
+}
+.reveal .slides section.academic-slide aside.notes { display:none; }
+.reveal .references-one {position:absolute;top:0;left:0;width:1280px;height:720px;padding:45px 70px;box-sizing:border-box;}
+.reveal .references-one .section-kicker {font:700 13px Arial,sans-serif;color:#7953a6;letter-spacing:.07em}
+.reveal .references-one h1 {font:normal 42px Georgia,serif;margin:16px 0;color:#362b41}
+.reveal .references-one p {margin:10px 0 22px;color:#776a83;font-size:19px}
+.reveal .references-one ol {columns:2;column-gap:54px;list-style:none;padding:0;margin:0}
+.reveal .references-one li {font:normal 18.5px/1.18 Arial,sans-serif;border-bottom:1px solid #ebe7ef;padding:8px 2px;break-inside:avoid}
+.reveal .references-one li a {color:#422168;text-decoration:none}
+.reveal .references-one li a:hover,.reveal .references-one li a:focus-visible {text-decoration:underline}
+.reveal .ref-link {position:absolute;left:70px;bottom:85px;background:#422168;color:#fff!important;text-decoration:none;border-radius:5px;padding:16px 20px;font:700 18px Arial,sans-serif}
+.reveal .ref-foot {position:absolute;left:70px;bottom:31px;color:#746e7c;font-size:13px;max-width:1130px}
+.reveal a:focus-visible {outline:3px solid #7953A6;outline-offset:2px}
+/* Logos institucionales: dos marcas con tamaño acotado y sin superponerse al título. */
+.reveal .cover-logos {position:absolute;right:70px;top:66px;width:590px;height:88px;z-index:7;display:flex;justify-content:flex-end;align-items:center;gap:20px;pointer-events:none}
+.reveal .cover-logo {position:relative;flex:none;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff}
+.reveal .cover-logo-ciie {width:395px;height:65px}
+.reveal .cover-logo-facso {width:142px;height:88px}
+.reveal .cover-logo img {position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;background:#fff;max-width:none!important;max-height:none!important;margin:0!important}
+.reveal .cover-logo img[hidden] {display:none!important}
+.reveal .cover-logo .logo-placeholder {font:700 15px/1.3 Arial,Helvetica,sans-serif;color:#422168;text-align:center;letter-spacing:.03em;opacity:.78}
+.reveal .cover-logo-facso .logo-placeholder {font-size:12px}
+@media print {
+ .reveal .slides section.academic-slide {break-after:page;page-break-after:always}
+}
+
+/* No tapar identificación de respaldo mientras carga la imagen remota. */
+.reveal .cover-logo img:not(.is-loaded){opacity:0}
+.reveal .cover-logo img.is-loaded{opacity:1}
+
+/* P47.3 · Controles NATIVOS Reveal.js: flechas laterales, sólo n° / total. */
+.reveal .controls {color:#422168!important;}
+.reveal .slide-number {position:fixed;right:21px!important;bottom:12px!important;background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;opacity:.83!important;color:#422168!important;font:15px/1.1 Arial,Helvetica,sans-serif!important;}
+.reveal .slide-number a,.reveal .slide-number span {color:#422168!important;text-decoration:none!important;background:transparent!important;}
+@media print {.reveal .controls,.reveal .slide-number {display:none!important;}}

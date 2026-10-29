@@ -1,0 +1,64 @@
+:root{--royal:#422168;--violet:#7953A6;--lavender:#E9E2F2;--ink:#342D40;--scale:1}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#e9e6ed;color:var(--ink);font-family:Arial,Aptos,Helvetica,sans-serif}
+.reveal{width:100%;height:100%;position:relative;overflow:hidden;}
+.reveal .slides{position:absolute;inset:0}
+.reveal .slides section.academic-slide{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:0!important;margin:0!important;border:0!important;background:transparent;overflow:hidden;}
+.reveal .slides section.academic-slide.present{display:flex}
+.reveal .slides section.academic-slide > h2{display:none}
+.reveal .slide-canvas{flex:none;position:relative;width:1280px;height:720px;background:#fff;overflow:hidden;transform:scale(var(--scale));transform-origin:center center}
+.reveal .ppt-text,.reveal .ppt-rect{position:absolute;white-space:normal;z-index:3}
+.reveal .ppt-text{line-height:1.08;margin:0;overflow:visible}
+.reveal .ppt-text .ppt-para{min-height:1px;white-space:pre-wrap;margin:0;padding:0}
+.reveal .ppt-rect{z-index:1}
+.reveal .raw-line{position:absolute;top:0;left:0;width:1280px;height:720px;z-index:2;overflow:visible;pointer-events:none}
+.reveal aside.notes{display:none}
+.references-one{position:absolute;top:0;left:0;width:1280px;height:720px;padding:45px 70px}
+.references-one .section-kicker{font:700 13px Arial,sans-serif;color:#7953a6;letter-spacing:.07em}
+.references-one h1{font:normal 42px Georgia,'Liberation Serif',serif;margin:16px 0;color:#362b41}
+.references-one p{margin:10px 0 22px;color:#776a83;font-size:19px}
+.references-one ol{columns:2;column-gap:54px;list-style:none;padding:0;margin:0}
+.references-one li{font:normal 18.5px/1.18 Arial,sans-serif;border-bottom:1px solid #ebe7ef;padding:8px 2px;break-inside:avoid}
+.references-one li a{color:#422168;text-decoration:none}
+.references-one li a:hover,.references-one li a:focus-visible{text-decoration:underline}
+.ref-link{position:absolute;left:70px;bottom:85px;background:#422168;color:#fff!important;text-decoration:none;border-radius:5px;padding:16px 20px;font:700 18px Arial,sans-serif}
+.ref-foot{position:absolute;left:70px;bottom:31px;color:#746e7c;font-size:13px;max-width:1130px}
+/* Reveal-like navigation: edge arrows + only current/total counter. No toolbar. */
+.offline-navigation{position:fixed;inset:0;z-index:999;pointer-events:none}
+.offline-navigation .nav-arrow{position:absolute;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:44px;height:72px;padding:0;background:transparent;border:0;border-radius:10px;color:#422168;opacity:.62;cursor:pointer;pointer-events:auto;transition:opacity .15s,background .15s}
+.offline-navigation .nav-prev{left:5px}
+.offline-navigation .nav-next{right:5px}
+.offline-navigation .nav-arrow svg{fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.offline-navigation .nav-arrow:hover:not(:disabled),.offline-navigation .nav-arrow:focus-visible{opacity:1;background:rgba(233,226,242,.52)}
+.offline-navigation .nav-arrow:disabled{opacity:.12;cursor:default}
+.offline-slide-number{position:fixed;right:21px;bottom:12px;z-index:999;font:15px/1.1 Arial,Helvetica,sans-serif;letter-spacing:.01em;color:#422168;opacity:.83;background:transparent;padding:0;border:0;font-variant-numeric:tabular-nums;pointer-events:none}
+a:focus-visible,button:focus-visible{outline:3px solid #a579db;outline-offset:2px}
+/* Quarto's Reveal.js runtime uses zooming to fit its 1280x720 stage; remove fallback transform. */
+.reveal.ready .slides section.academic-slide{position:relative;inset:auto;display:block;overflow:visible}
+.reveal.ready .slides section.academic-slide.present{display:block}
+.reveal.ready .slide-canvas{transform:none!important}
+.reveal.ready .offline-navigation,.reveal.ready .offline-slide-number{display:none}
+@media print{
+ @page{size:13.333333in 7.5in;margin:0}
+ html,body{width:1280px;height:auto;overflow:visible!important;background:#fff!important}
+ .reveal,.reveal .slides{position:static!important;width:1280px!important;height:auto!important;overflow:visible!important}
+ .reveal .slides section.academic-slide,.reveal .slides section.academic-slide.present{position:relative!important;inset:auto!important;display:block!important;width:1280px!important;height:720px!important;transform:none!important;margin:0!important;padding:0!important;break-after:page;page-break-after:always;overflow:hidden!important}
+ .reveal .slide-canvas{transform:none!important}
+ .offline-navigation,.offline-slide-number,.notes{display:none!important}
+}
+
+/* P47.1 · Identidad institucional en portada: mantiene intactas las cajas originales.
+ * Las marcas oficiales se cargan desde URLs exactas; cuando no hay conexión,
+ * aparece una identificación tipográfica neutral, NO una reproducción del logo. */
+.reveal .cover-logos{position:absolute;right:70px;top:66px;width:590px;height:88px;z-index:7;display:flex;justify-content:flex-end;align-items:center;gap:20px;pointer-events:none}
+.reveal .cover-logo{position:relative;flex:none;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff}
+.reveal .cover-logo-ciie{width:395px;height:65px}
+.reveal .cover-logo-facso{width:142px;height:88px}
+.reveal .cover-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;background:#fff}
+.reveal .cover-logo img[hidden]{display:none!important}
+.reveal .cover-logo .logo-placeholder{font:700 15px/1.3 Arial,Helvetica,sans-serif;color:#422168;text-align:center;letter-spacing:.03em;opacity:.78}
+.reveal .cover-logo-facso .logo-placeholder{font-size:12px}
+
+/* No tapar identificación de respaldo mientras carga la imagen remota. */
+.reveal .cover-logo img:not(.is-loaded){opacity:0}
+.reveal .cover-logo img.is-loaded{opacity:1}

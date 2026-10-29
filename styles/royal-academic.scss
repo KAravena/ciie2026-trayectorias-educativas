@@ -1,0 +1,19 @@
+/*-- scss:defaults --*/
+$body-bg: #ffffff;
+$body-color: #342D40;
+$link-color: #422168;
+$presentation-heading-font: Georgia, 'Liberation Serif', serif;
+$font-family-sans-serif: Arial, Aptos, Helvetica, sans-serif;
+$presentation-slide-text-align: left;
+$presentation-font-size-root: 28px;
+/*-- scss:rules --*/
+.reveal {background:#ffffff}
+.reveal .slides {text-align:left}
+.reveal .slides section.academic-slide {padding:0!important}
+.reveal .slides section.academic-slide>h2 {display:none}
+.reveal .slide-canvas{width:1280px;height:720px;position:relative;background:#fff;overflow:hidden}
+.reveal .ppt-text{line-height:1.08}
+.reveal .ppt-text p{margin:0}
+.reveal a:focus-visible{outline:3px solid #7953A6}
+
+/* Portada institucional: los tamaños de las marcas se gestionan en components.css */

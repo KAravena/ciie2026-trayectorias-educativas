@@ -1,0 +1,9 @@
+﻿tipo,categoria,valor,unidad,fuente
+Descriptivo,HC matrícula,82.64,porcentaje,V29 12
+Descriptivo,TP matrícula,60.19,porcentaje,V29 12
+Binario M3,TP−HC,-12.53,pp,V29 13
+Multinomial M3,Sin matrícula,13.5,pp,V29 15
+Multinomial M3,Universidad,-24.25,pp,V29 15
+Multinomial M3,IP,6.2,pp,V29 15
+Multinomial M3,CFT,4.55,pp,V29 15
+Sensibilidad IP,Excluyendo universidad,-4.46,pp,Suplemento A4; diferente N=647747

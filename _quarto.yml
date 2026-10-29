@@ -1,0 +1,10 @@
+project:
+  type: default
+  output-dir: _site
+  resources:
+    - referencias.html
+    - data/*.csv
+    - assets/logo-*.png
+    - assets/logo-*.jpg
+execute:
+  echo: false
